@@ -17,6 +17,9 @@ def auto_perms(models,perms):
     """
     required_permissions = []
 
+    if not ( models and perms):
+        return None
+
     if not isinstance(perms, (list, tuple)):
         # Transform single object to list with single item
         perms = [ perms, ]
